@@ -1,0 +1,54 @@
+name: Build macOS
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install frontend dependencies
+        run: npm ci
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: aarch64-apple-darwin
+
+      - name: Rust cache
+        uses: swatinem/rust-cache@v2
+        with:
+          workspaces: src-tauri
+
+      - name: Build Tauri app
+        run: npx tauri build --target aarch64-apple-darwin
+        env:
+          APPLE_SIGNING_IDENTITY: ""
+
+      - name: List artifacts
+        run: |
+          echo "=== DMG ==="
+          find src-tauri/target/aarch64-apple-darwin/release/bundle -name "*.dmg" 2>/dev/null
+          echo "=== APP ==="
+          find src-tauri/target/aarch64-apple-darwin/release/bundle -name "*.app" -maxdepth 3 2>/dev/null
+
+      - name: Upload DMG
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: src-tauri/target/aarch64-apple-darwin/release/bundle/dmg/*.dmg
+          draft: true
+          prerelease: false

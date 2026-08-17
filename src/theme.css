@@ -1,0 +1,72 @@
+:root {
+  --bg-dark: #0d0d0d;
+  --bg-panel: #111111;
+  --bg-card: #1a1a1a;
+  --bg-raised: #282828;
+  --bg-input: #222222;
+  --bg-hover: #2a2a2a;
+  --fg-primary: #ffffff;
+  --fg-secondary: #aaaaaa;
+  --fg-dim: #666666;
+  --accent-green: #00e5a0;
+  --accent-pink: #f43f7a;
+  --accent-blue: #3b82f6;
+  --accent-amber: #f59e0b;
+  --accent-purple: #8b5cf6;
+  --border: #333333;
+  --btn-border: #3a3a3a;
+  --header-top: #0c1a16;
+  --danger: #f43f7a;
+
+  --font-ui: "Segoe UI Variable Text", "Segoe UI", system-ui, sans-serif;
+  --font-display: "Bahnschrift", "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "Cascadia Code", Consolas, "Courier New", monospace;
+
+  --radius-card: 10px;
+  --radius-chip: 8px;
+  --radius-btn: 6px;
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-lift: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-ui);
+  background: var(--bg-dark);
+  color: var(--fg-primary);
+  font-size: 13px;
+  overflow: hidden;
+  user-select: none;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-panel);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #444;
+}
+
+input,
+select,
+button {
+  font-family: inherit;
+}
