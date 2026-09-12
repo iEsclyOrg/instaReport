@@ -4,7 +4,7 @@
 
 ### InstaReport — Release History
 
-[← Back to README](README.md) &nbsp;·&nbsp; [Online Changelog](https://instagramban.lovable.app/changelog)
+[← Back to README](README.md) &nbsp;·&nbsp; [Online Changelog](https://iescly.duckdns.org/changelog)
 
 </div>
 

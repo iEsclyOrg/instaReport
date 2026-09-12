@@ -47,7 +47,7 @@
 User feedback drives prioritization. Share requests through:
 
 - The official Telegram channel: <https://t.me/iescly>
-- The [official website](https://instagramban.lovable.app)
+- The [official website](https://iescly.duckdns.org)
 
 Feature requests are collected and reviewed against community impact, effort and strategic fit.
 

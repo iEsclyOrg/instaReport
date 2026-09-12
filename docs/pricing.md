@@ -14,7 +14,7 @@
 
 InstaReport is **commercial proprietary software** distributed under a paid license. Licenses are validated online and bound to your device hardware ID.
 
-> For current plans, availability and the latest pricing, visit the **official pricing page**: <https://instagramban.lovable.app/pricing>
+> For current plans, availability and the latest pricing, visit the **official pricing page**: <https://iescly.duckdns.org/pricing>
 
 ---
 
@@ -40,13 +40,13 @@ InstaReport is **commercial proprietary software** distributed under a paid lice
 
 Multiple license plans are available to suit different usage levels. Plan details (features, duration and price) are published on the official pricing page.
 
-- 🌐 **Pricing:** <https://instagramban.lovable.app/pricing>
+- 🌐 **Pricing:** <https://iescly.duckdns.org/pricing>
 
 ---
 
 ## How to Purchase
 
-1. Visit the [official pricing page](https://instagramban.lovable.app/pricing).
+1. Visit the [official pricing page](https://iescly.duckdns.org/pricing).
 2. Choose a plan.
 3. Complete payment.
 4. Receive your activation key.

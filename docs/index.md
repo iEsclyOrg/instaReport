@@ -51,11 +51,11 @@ This documentation covers everything you need to know about **InstaReport** — 
 
 ## Quick Links
 
-- 🌐 **Official Website:** <https://instagramban.lovable.app>
+- 🌐 **Official Website:** <https://iescly.duckdns.org>
 - 💬 **Official Telegram:** <https://t.me/iescly>
 - 🎮 **Official Discord:** <https://discord.com/invite/v6ebT5aFx>
-- 💎 **Pricing:** <https://instagramban.lovable.app/pricing>
-- 📝 **Online Changelog:** <https://instagramban.lovable.app/changelog>
+- 💎 **Pricing:** <https://iescly.duckdns.org/pricing>
+- 📝 **Online Changelog:** <https://iescly.duckdns.org/changelog>
 
 ---
 

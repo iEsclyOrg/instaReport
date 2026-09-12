@@ -37,7 +37,7 @@ Violation of these terms may result in **license revocation** without refund.
 
 ## License Activation
 
-1. Purchase a license from the [official pricing page](https://instagramban.lovable.app/pricing).
+1. Purchase a license from the [official pricing page](https://iescly.duckdns.org/pricing).
 2. Launch InstaReport.
 3. Enter your activation key.
 4. The app validates the key online and binds it to your device hardware ID.
@@ -58,7 +58,7 @@ No. Licenses are hardware-bound to a single device.
 
 ### Is there a free version?
 
-Licensing is commercial. Check the [pricing page](https://instagramban.lovable.app/pricing) for the current plans and any trial options.
+Licensing is commercial. Check the [pricing page](https://iescly.duckdns.org/pricing) for the current plans and any trial options.
 
 ### What happens when my license expires?
 

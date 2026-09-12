@@ -21,7 +21,7 @@
 
 ### License expired
 
-Renew or purchase a new license via the [official pricing page](https://instagramban.lovable.app/pricing).
+Renew or purchase a new license via the [official pricing page](https://iescly.duckdns.org/pricing).
 
 ### "Invalid license key"
 
@@ -35,7 +35,7 @@ Renew or purchase a new license via the [official pricing page](https://instagra
 ### Windows binary won't start
 
 - Ensure Windows 10/11 is up to date.
-- If SmartScreen warns, verify the download came from [official releases](https://github.com/iExly/InstaReport/releases) before allowing.
+- If SmartScreen warns, verify the download came from [official releases](https://github.com/iEsclyOrg/instaReport/releases) before allowing.
 - Try running the executable from a fresh download.
 
 ### Linux binary permission denied
@@ -97,7 +97,7 @@ chmod +x InstaReport-Linux-x86_64.bin
 ### Auto-update not triggering
 
 - Update checks run at startup. Restart the app to trigger a check.
-- You can always download the latest release from [GitHub Releases](https://github.com/iExly/InstaReport/releases).
+- You can always download the latest release from [GitHub Releases](https://github.com/iEsclyOrg/instaReport/releases).
 
 ---
 

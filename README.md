@@ -1,6 +1,6 @@
 ﻿<div align="center">
 
-<a href="https://github.com/iExly/InstaReport">
+<a href="https://github.com/iEsclyOrg/instaReport">
   <img src="social-preview.png" alt="InstaReport - Professional Social Media Reporting & Account Management Platform">
 </a>
 
@@ -12,21 +12,21 @@
 
 ### InstaReport
 
-**Actively developed since 2021** &nbsp;·&nbsp; **Officially maintained by [iExly](https://github.com/iExly)**
+**Actively developed since 2021** &nbsp;·&nbsp; **Officially maintained by [iExly](https://github.com/iEsclyOrg)**
 
 Originally created under the **Credly** project, later known as **iEscly**, now released as **InstaReport** by **iExly**.
 
 ---
 
-[![Official Website](https://img.shields.io/badge/🌐_Official_Website-Visit_Now-7c3aed?style=for-the-badge&logo=web)](https://instagramban.lovable.app)
-[![Purchase License](https://img.shields.io/badge/💎_Purchase_License-Available-16a34a?style=for-the-badge&logo=security)](https://instagramban.lovable.app/pricing)
+[![Official Website](https://img.shields.io/badge/🌐_Official_Website-Visit_Now-7c3aed?style=for-the-badge&logo=web)](https://iescly.duckdns.org)
+[![Purchase License](https://img.shields.io/badge/💎_Purchase_License-Available-16a34a?style=for-the-badge&logo=security)](https://iescly.duckdns.org/pricing)
 [![Telegram Bot](https://img.shields.io/badge/Telegram_Bot-@instaReportV2Bot-229ED9?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/instaReportV2Bot)
-[![GitHub](https://img.shields.io/badge/GitHub-Official_Repository-181717?style=for-the-badge&logo=github)](https://github.com/iExly/InstaReport)
+[![GitHub](https://img.shields.io/badge/GitHub-Official_Repository-181717?style=for-the-badge&logo=github)](https://github.com/iEsclyOrg/instaReport)
 
-[![GitHub stars](https://img.shields.io/github/stars/iExly/InstaReport?style=for-the-badge&logo=github&color=7c3aed)](https://github.com/iExly/InstaReport/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/iExly/InstaReport?style=for-the-badge&logo=github&color=7c3aed)](https://github.com/iExly/InstaReport/network)
-[![Version](https://img.shields.io/badge/Version-v8.7.5-7c3aed?style=for-the-badge&logo=semver)](https://github.com/iExly/InstaReport/releases)
-[![GitHub last commit](https://img.shields.io/github/last-commit/iExly/InstaReport?style=for-the-badge&color=16a34a)](https://github.com/iExly/InstaReport/commits/main)
+[![GitHub stars](https://img.shields.io/github/stars/iExly/InstaReport?style=for-the-badge&logo=github&color=7c3aed)](https://github.com/iEsclyOrg/instaReport/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/iExly/InstaReport?style=for-the-badge&logo=github&color=7c3aed)](https://github.com/iEsclyOrg/instaReport/network)
+[![Version](https://img.shields.io/badge/Version-v9.0.1-7c3aed?style=for-the-badge&logo=semver)](https://github.com/iEsclyOrg/instaReport/releases)
+[![GitHub last commit](https://img.shields.io/github/last-commit/iExly/InstaReport?style=for-the-badge&color=16a34a)](https://github.com/iEsclyOrg/instaReport/commits/main)
 
 </div>
 
@@ -90,8 +90,8 @@ Due to the popularity of the project, there are unofficial repositories, fake se
 
 | Official Resource | Link |
 |-------------------|------|
-| 🌐 Official Website | <https://instagramban.lovable.app> |
-| ⭐ Official GitHub | <https://github.com/iExly/InstaReport> |
+| 🌐 Official Website | <https://iescly.duckdns.org> |
+| ⭐ Official GitHub | <https://github.com/iEsclyOrg/instaReport> |
 | 💬 Official Telegram | <https://t.me/iescly> |
 | 🎮 Official Discord | <https://discord.com/invite/v6ebT5aFx> |
 | 📺 Official YouTube | <https://youtube.com/@iEscly> |
@@ -201,7 +201,7 @@ Choose your preferred platform.
 
 ### 🪟 Windows
 
-1. Download the latest Windows release from [GitHub Releases](https://github.com/iExly/InstaReport/releases).
+1. Download the latest Windows release from [GitHub Releases](https://github.com/iEsclyOrg/instaReport/releases).
 2. Run:
 
 ```
@@ -242,7 +242,7 @@ The cloud-hosted Telegram bot is available at [@instaReportV2Bot](https://t.me/i
 
 ## 🔑 License Activation
 
-1. Purchase a license from the [official pricing page](https://instagramban.lovable.app/pricing).
+1. Purchase a license from the [official pricing page](https://iescly.duckdns.org/pricing).
 2. Launch InstaReport.
 3. Enter your activation key.
 4. Begin using supported features.
@@ -410,7 +410,7 @@ No. The Windows and Linux standalone binaries require no Python installation.
 <details>
 <summary><strong>How do I get a license?</strong></summary>
 
-Visit the [official pricing page](https://instagramban.lovable.app/pricing) to purchase a license. Licenses are validated online and bound to your device.
+Visit the [official pricing page](https://iescly.duckdns.org/pricing) to purchase a license. Licenses are validated online and bound to your device.
 
 </details>
 
@@ -431,7 +431,7 @@ See the pricing page and [SUPPORT.md](SUPPORT.md) for the applicable refund term
 <details>
 <summary><strong>Where can I see updates and changes?</strong></summary>
 
-Check the [CHANGELOG.md](CHANGELOG.md) or the [online changelog](https://instagramban.lovable.app/changelog).
+Check the [CHANGELOG.md](CHANGELOG.md) or the [online changelog](https://iescly.duckdns.org/changelog).
 
 </details>
 
@@ -461,12 +461,12 @@ Check the [CHANGELOG.md](CHANGELOG.md) or the [online changelog](https://instagr
 
 The InstaReport community has been growing since 2021.
 
-- 🌐 **Website:** <https://instagramban.lovable.app>
+- 🌐 **Website:** <https://iescly.duckdns.org>
 - 💬 **Telegram:** <https://t.me/iescly>
 - 🎮 **Discord:** <https://discord.com/invite/v6ebT5aFx>
 - 📺 **YouTube:** <https://youtube.com/@iEscly>
 - 📸 **Instagram:** <https://instagram.com/i3scly>
-- ⭐ **GitHub:** <https://github.com/iExly/InstaReport>
+- ⭐ **GitHub:** <https://github.com/iEsclyOrg/instaReport>
 - 🎬 **Showcase:** <https://t.me/+Q1JOkBB4a5w2MGZh>
 - ✅ **Vouches:** <https://t.me/iVouchiEscly>
 
@@ -478,7 +478,7 @@ Every major version introduces improvements in performance, compatibility, stabi
 
 Full changelog:
 
-- **Online:** <https://instagramban.lovable.app/changelog>
+- **Online:** <https://iescly.duckdns.org/changelog>
 - **Repository:** [CHANGELOG.md](CHANGELOG.md)
 
 ---
@@ -494,7 +494,7 @@ Full changelog:
 
 <div align="center">
 
-**InstaReport** — a premium social media automation platform by [iExly](https://github.com/iExly)
+**InstaReport** — a premium social media automation platform by [iExly](https://github.com/iEsclyOrg)
 
 Originally **Credly** · Later **iEscly** · Now **InstaReport by iExly**
 

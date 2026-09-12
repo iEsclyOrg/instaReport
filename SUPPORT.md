@@ -17,7 +17,7 @@ This is the fastest and most reliable way to reach the team. Support is availabl
 To help us resolve your issue faster, please have ready:
 
 1. **Your platform** — Windows, Linux, Android (Termux) or Telegram bot.
-2. **Your version** — check the current version in the app or on the [releases page](https://github.com/iExly/InstaReport/releases).
+2. **Your version** — check the current version in the app or on the [releases page](https://github.com/iEsclyOrg/instaReport/releases).
 3. **A clear description** of the problem and what you expected to happen.
 4. **Any error messages** shown on screen.
 
@@ -32,7 +32,7 @@ To help us resolve your issue faster, please have ready:
 | [Troubleshooting](docs/troubleshooting.md) | Common issues and solutions |
 | [FAQ](FAQ.md) | Frequently asked questions |
 | [Changelog](CHANGELOG.md) | What changed in each release |
-| [Online Changelog](https://instagramban.lovable.app/changelog) | Changelog on the website |
+| [Online Changelog](https://iescly.duckdns.org/changelog) | Changelog on the website |
 
 ---
 
@@ -48,7 +48,7 @@ To help us resolve your issue faster, please have ready:
 
 ## Refund Requests
 
-Refund eligibility follows the terms published on the [official pricing page](https://instagramban.lovable.app/pricing). To request a refund, contact support via the official Telegram channel and provide your purchase details.
+Refund eligibility follows the terms published on the [official pricing page](https://iescly.duckdns.org/pricing). To request a refund, contact support via the official Telegram channel and provide your purchase details.
 
 ---
 
