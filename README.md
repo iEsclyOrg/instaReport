@@ -25,7 +25,7 @@ Originally created under the **Credly** project, later known as **iEscly**, now 
 
 [![GitHub stars](https://img.shields.io/github/stars/iExly/InstaReport?style=for-the-badge&logo=github&color=7c3aed)](https://github.com/iEsclyOrg/instaReport/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/iExly/InstaReport?style=for-the-badge&logo=github&color=7c3aed)](https://github.com/iEsclyOrg/instaReport/network)
-[![Version](https://img.shields.io/badge/Version-v9.0.1-7c3aed?style=for-the-badge&logo=semver)](https://github.com/iEsclyOrg/instaReport/releases)
+[![Version](https://img.shields.io/badge/Version-v9.0.2-7c3aed?style=for-the-badge&logo=semver)](https://github.com/iEsclyOrg/instaReport/releases)
 [![GitHub last commit](https://img.shields.io/github/last-commit/iExly/InstaReport?style=for-the-badge&color=16a34a)](https://github.com/iEsclyOrg/instaReport/commits/main)
 
 </div>
