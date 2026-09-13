@@ -25,6 +25,23 @@ async fn sidecar_call(
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
+    if std::env::var("INSTAREPORT_BRIDGE_SELFTEST").is_ok_and(|v| v == "1") {
+        let result = sidecar::BridgeState::self_test();
+        if let Ok(out) = std::env::var("INSTAREPORT_SELFTEST_OUT") {
+            let _ = std::fs::write(
+                out,
+                match &result {
+                    Ok(r) => r.to_string(),
+                    Err(e) => format!("SELFTEST FAILED: {e}"),
+                },
+            );
+        }
+        std::process::exit(match result {
+            Ok(_) => 0,
+            Err(_) => 1,
+        });
+    }
+
     let bridge = BridgeState::spawn().ok();
 
     tauri::Builder::default()

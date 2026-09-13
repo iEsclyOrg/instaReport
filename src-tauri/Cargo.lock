@@ -1728,7 +1728,7 @@ dependencies = [
 
 [[package]]
 name = "instareport-app"
-version = "9.0.1"
+version = "9.0.2"
 dependencies = [
  "serde",
  "serde_json",

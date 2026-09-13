@@ -1,6 +1,6 @@
 [package]
 name = "instareport-app"
-version = "9.0.1"
+version = "9.0.2"
 description = "InstaReport — modern desktop UI (Tauri shell + Python sidecar)"
 authors = ["you"]
 edition = "2021"
