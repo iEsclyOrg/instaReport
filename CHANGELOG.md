@@ -9,6 +9,13 @@
 </div>
 
 ---
+## [9.0.2] - 2026-09-13
+
+### Bug Fixes
+
+- **Sidecar dead-pipe fix** - if the built-in engine sidecar process dies or its IPC pipe closes mid-session ("os error 232 / Activation error: sidecar write failed"), the Tauri bridge now detects the dead sidecar, automatically respawns it, and retries the pending request. No more stuck activation or frozen tools
+- **Linux build fix** - explicit type annotation in sidecar.rs so the Linux release compiles cleanly
+
 
 ## [8.7.5] — 2026-08-08
 
