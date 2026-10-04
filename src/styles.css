@@ -1009,6 +1009,12 @@ input[type="checkbox"].switch:checked::after {
 
 .tool-msg.warn {
   color: var(--accent-amber);
+  background: rgba(245, 158, 11, 0.1);
+}
+
+.tool-msg.ok {
+  color: var(--accent-green);
+  background: rgba(0, 229, 160, 0.12);
 }
 
 .tool-msg a {

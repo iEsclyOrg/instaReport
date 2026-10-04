@@ -155,6 +155,7 @@ function LicenseModal() {
   const [code, setCode] = useState("");
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState<string | null>(null);
+  const [done, setDone] = useState(false);
 
   async function submit() {
     if (!code.trim()) {
@@ -165,7 +166,12 @@ function LicenseModal() {
     setMsg(null);
     try {
       const ok = await activate(code.trim());
-      if (!ok) setMsg("Activation failed — check the key and try again.");
+      if (ok) {
+        setDone(true);
+        setMsg(`✓ License activated${license?.msg ? ` — ${license.msg}` : ""}`);
+      } else {
+        setMsg("Activation failed — check the key and try again.");
+      }
     } finally {
       setBusy(false);
     }
@@ -183,29 +189,40 @@ function LicenseModal() {
         onClick={(e) => e.stopPropagation()}
       >
         <ModalHead title="License Activation" onClose={close} />
-        <p className="hint">
-          {license?.ok
-            ? `Licensed — ${license.code ?? "key saved"}. Enter a new key to re-activate.`
-            : "Enter your license key to activate InstaReport."}
-        </p>
+        {done ? (
+          <p className="hint">Licensed — your key has been verified and saved.</p>
+        ) : (
+          <p className="hint">
+            {license?.ok
+              ? `Licensed — ${license.code ?? "key saved"}. Enter a new key to re-activate.`
+              : "Enter your license key to activate InstaReport."}
+          </p>
+        )}
         <input
           className="field"
           style={{ width: "100%" }}
           placeholder="License key"
           value={code}
           autoFocus
+          disabled={done}
           spellCheck={false}
           onChange={(e) => setCode(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && submit()}
         />
-        {msg && <p className="tool-msg warn">{msg}</p>}
+        {msg && <p className={`tool-msg ${done ? "ok" : "warn"}`}>{msg}</p>}
         <div className="modal-actions">
           <button className="btn btn-ghost" onClick={close}>
-            {license?.ok ? "Close" : "Skip for now"}
+            {done ? "Close" : license?.ok ? "Close" : "Skip for now"}
           </button>
-          <button className="btn btn-primary" onClick={submit} disabled={busy || !code.trim()}>
-            {busy ? "Activating…" : "Activate"}
-          </button>
+          {done ? (
+            <button className="btn btn-primary" onClick={close}>
+              Done
+            </button>
+          ) : (
+            <button className="btn btn-primary" onClick={submit} disabled={busy || !code.trim()}>
+              {busy ? "Activating…" : "Activate"}
+            </button>
+          )}
         </div>
       </motion.div>
     </div>

@@ -300,7 +300,9 @@ export const useApp = create<AppState>((set, get) => {
           plugins: boot.plugins,
           error: null,
         });
-        await get().refreshHistory();
+        await get().refreshHistory().catch((e) => {
+          pushLog(`History refresh failed: ${e}`, "err");
+        });
         pushLog(`InstaReport v${boot.version} — sidecar connected`, "ok");
       } catch (e) {
         set({ loading: false, error: String(e) });
@@ -451,7 +453,7 @@ export const useApp = create<AppState>((set, get) => {
       try {
         const res = await call<{ ok: boolean; msg: string }>("license_activate", { code });
         if (res.ok) {
-          set({ license: { ok: true, code, msg: res.msg }, showLicense: false });
+          set({ license: { ok: true, code, msg: res.msg } });
           pushLog(`License activated: ${res.msg}`, "ok");
         } else {
           pushLog(`Activation failed: ${res.msg}`, "err");
