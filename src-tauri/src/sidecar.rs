@@ -53,7 +53,7 @@ fn python_candidates(script: &str) -> Vec<(String, Vec<String>)> {
     out.push(("python3".to_string(), vec![script.to_string()]));
     out.push(("py".to_string(), vec!["-3".to_string(), script.to_string()]));
 
-    let mut roots = Vec::new();
+    let mut roots: Vec<std::path::PathBuf> = Vec::new();
     #[cfg(target_os = "windows")]
     {
         if let Ok(d) = std::env::var("LOCALAPPDATA") {
