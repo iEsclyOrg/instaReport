@@ -8,6 +8,7 @@ export default function Controls() {
   const startRun = useApp((s) => s.startRun);
   const stopRun = useApp((s) => s.stopRun);
   const openAccounts = useApp((s) => s.openAccounts);
+  const openProxies = useApp((s) => s.openProxies);
   const pushLog = useApp((s) => s.pushLog);
 
   const [target, setTarget] = useState("");
@@ -115,6 +116,9 @@ export default function Controls() {
         )}
         <button className="btn btn-ghost" onClick={openAccounts}>
           Accounts
+        </button>
+        <button className="btn btn-ghost" onClick={openProxies}>
+          Proxies
         </button>
       </div>
     </motion.div>

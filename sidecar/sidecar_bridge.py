@@ -184,6 +184,7 @@ def _bootstrap() -> dict:
         },
         "accounts": [{"user": u, "pass": p} for u, p in S.accounts],
         "proxies_count": PP.count(),
+        "proxies": PP.snapshot(),
         "license": {"ok": ok, "code": code, "msg": msg},
         "plugins": plugins,
         "stats": _stats(),
@@ -238,6 +239,18 @@ def _save_accounts(accounts: list[dict]) -> dict:
 def _proxy_refresh() -> dict:
     n = PP.load(_proxy_path())
     _log_cb(f"Proxies loaded: {n}", "ok")
+    return {"count": n}
+
+
+def _save_proxies(proxies: list[str]) -> dict:
+    cleaned = [ln.strip() for ln in proxies if ln.strip() and not ln.strip().startswith("#")]
+    path = _proxy_path()
+    with open(path, "w", encoding="utf-8") as f:
+        f.write("\n".join(cleaned))
+        if cleaned:
+            f.write("\n")
+    n = PP.load(path)
+    _log_cb(f"Proxies saved: {n}", "ok")
     return {"count": n}
 
 
@@ -336,6 +349,7 @@ HANDLERS = {
     "clear_history": _clear_history,
     "save_accounts": _save_accounts,
     "proxy_refresh": _proxy_refresh,
+    "save_proxies": _save_proxies,
     "license_activate": _license_activate,
     "plugin_toggle": _plugin_toggle,
     "plugins_refresh": _plugins_refresh,

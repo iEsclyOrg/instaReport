@@ -897,6 +897,20 @@ table.data tr:hover td {
   border-top: 1px solid #242424;
 }
 
+.proxy-editor {
+  width: 100%;
+  min-height: 140px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.55;
+  resize: vertical;
+  white-space: pre;
+}
+
+.proxy-editor:focus {
+  border-color: var(--accent-green);
+}
+
 /* ── Tool dialogs ───────────────────────────────────────────────────────── */
 .tool-form {
   display: grid;

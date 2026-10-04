@@ -48,6 +48,7 @@ export interface BootstrapData {
   config: ConfigState;
   accounts: Account[];
   proxies_count: number;
+  proxies: string[];
   license: LicenseInfo;
   plugins: PluginInfo[];
   stats: Stats;
@@ -151,6 +152,9 @@ interface AppState {
   captchaPrompt: CaptchaPrompt | null;
   showAccounts: boolean;
   accountsDraft: Account[];
+  proxies: string[];
+  showProxies: boolean;
+  proxiesDraft: string[];
   toolDialog: { schema: ToolSchema } | null;
   showLicense: boolean;
   plugins: PluginInfo[];
@@ -171,6 +175,10 @@ interface AppState {
   closeAccounts: () => void;
   updateAccountsDraft: (accounts: Account[]) => void;
   saveAccounts: () => Promise<void>;
+  openProxies: () => void;
+  closeProxies: () => void;
+  updateProxiesDraft: (proxies: string[]) => void;
+  saveProxies: () => Promise<void>;
   openToolDialog: (key: string) => Promise<void>;
   closeToolDialog: () => void;
   runTool: (key: string, values: Record<string, unknown>) => Promise<ToolResult>;
@@ -231,6 +239,9 @@ export const useApp = create<AppState>((set, get) => {
     captchaPrompt: null,
     showAccounts: false,
     accountsDraft: [],
+    proxies: [],
+    showProxies: false,
+    proxiesDraft: [],
     toolDialog: null,
     showLicense: false,
     plugins: [],
@@ -282,6 +293,7 @@ export const useApp = create<AppState>((set, get) => {
           activeTab: boot.tabs[0]?.[0] ?? "",
           accountsCount: boot.accounts.length,
           proxiesCount: boot.proxies_count,
+          proxies: boot.proxies,
           license: boot.license,
           stats: boot.stats,
           accountsDraft: boot.accounts,
@@ -378,6 +390,21 @@ export const useApp = create<AppState>((set, get) => {
         pushLog(`Accounts saved: ${res.count}`, "ok");
       } catch (e) {
         pushLog(`Save accounts failed: ${e}`, "err");
+      }
+    },
+
+    openProxies: () => set({ showProxies: true, proxiesDraft: get().proxies }),
+    closeProxies: () => set({ showProxies: false }),
+    updateProxiesDraft: (proxies) => set({ proxiesDraft: proxies }),
+
+    saveProxies: async () => {
+      const proxies = get().proxiesDraft;
+      try {
+        const res = await call<{ count: number }>("save_proxies", { proxies });
+        set({ proxiesCount: res.count, proxies, showProxies: false });
+        pushLog(`Proxies saved: ${res.count}`, "ok");
+      } catch (e) {
+        pushLog(`Save proxies failed: ${e}`, "err");
       }
     },
 

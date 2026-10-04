@@ -104,6 +104,50 @@ export function AccountsModal() {
   );
 }
 
+export function ProxiesModal() {
+  const draft = useApp((s) => s.proxiesDraft);
+  const count = useApp((s) => s.proxiesCount);
+  const update = useApp((s) => s.updateProxiesDraft);
+  const save = useApp((s) => s.saveProxies);
+  const close = useApp((s) => s.closeProxies);
+
+  useEscape(close);
+
+  return (
+    <div className="overlay" onClick={() => close()}>
+      <motion.div
+        className="modal wide"
+        initial={{ opacity: 0, scale: 0.96, y: 8 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ duration: 0.16, ease: "easeOut" }}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <ModalHead title="Proxies" onClose={close} />
+        <p className="hint">
+          {count} active — one proxy per line. Format: host:port or host:port:user:pass. Lines
+          starting with # are ignored.
+        </p>
+        <textarea
+          className="field proxy-editor"
+          rows={9}
+          spellCheck={false}
+          placeholder={"host:port\nhost:port:user:pass\n# comment lines are skipped\n"}
+          value={draft.join("\n")}
+          onChange={(e) => update(e.target.value.split("\n"))}
+        />
+        <div className="modal-actions">
+          <button className="btn btn-ghost" onClick={close}>
+            Cancel
+          </button>
+          <button className="btn btn-primary" onClick={() => void save()}>
+            Save Proxies
+          </button>
+        </div>
+      </motion.div>
+    </div>
+  );
+}
+
 function LicenseModal() {
   const license = useApp((s) => s.license);
   const activate = useApp((s) => s.activateLicense);
@@ -224,12 +268,14 @@ function PromptModal() {  const otp = useApp((s) => s.otpPrompt);
 
 export function Modals() {
   const showAccounts = useApp((s) => s.showAccounts);
+  const showProxies = useApp((s) => s.showProxies);
   const showLicense = useApp((s) => s.showLicense);
   const hasOtp = useApp((s) => Boolean(s.otpPrompt));
   const hasCaptcha = useApp((s) => Boolean(s.captchaPrompt));
   const hasTool = useApp((s) => Boolean(s.toolDialog));
 
   if (showAccounts) return <AccountsModal />;
+  if (showProxies) return <ProxiesModal />;
   if (showLicense) return <LicenseModal />;
   if (hasOtp || hasCaptcha) return <PromptModal />;
   if (hasTool) return <ToolDialog />;
