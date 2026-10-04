@@ -1,32 +1,37 @@
 :root {
   --bg-dark: #0d0d0d;
   --bg-panel: #111111;
-  --bg-card: #1a1a1a;
-  --bg-raised: #282828;
-  --bg-input: #222222;
-  --bg-hover: #2a2a2a;
-  --fg-primary: #ffffff;
-  --fg-secondary: #aaaaaa;
-  --fg-dim: #666666;
+  --bg-card: #17181a;
+  --bg-raised: #26282c;
+  --bg-input: #1e1f22;
+  --bg-hover: #24262a;
+  --fg-strong: #ffffff;
+  --fg-primary: #e9edf2;
+  --fg-secondary: #a6adb8;
+  --fg-dim: #626874;
   --accent-green: #00e5a0;
+  --accent-green-soft: rgba(0, 229, 160, 0.14);
   --accent-pink: #f43f7a;
-  --accent-blue: #3b82f6;
-  --accent-amber: #f59e0b;
+  --accent-blue: #4d8dff;
+  --accent-amber: #f5a623;
   --accent-purple: #8b5cf6;
-  --border: #333333;
-  --btn-border: #3a3a3a;
+  --border: #2c2f35;
+  --btn-border: #383c44;
   --header-top: #0c1a16;
   --danger: #f43f7a;
+  --focus-ring: rgba(0, 229, 160, 0.55);
 
   --font-ui: "Segoe UI Variable Text", "Segoe UI", system-ui, sans-serif;
   --font-display: "Bahnschrift", "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif;
   --font-mono: "Cascadia Code", Consolas, "Courier New", monospace;
 
-  --radius-card: 10px;
+  --radius-card: 12px;
   --radius-chip: 8px;
-  --radius-btn: 6px;
-  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.4);
-  --shadow-lift: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --radius-btn: 7px;
+  --radius-field: 6px;
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.45);
+  --shadow-lift: 0 10px 32px rgba(0, 0, 0, 0.55);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 * {
@@ -48,25 +53,69 @@ body {
   font-size: 13px;
   overflow: hidden;
   user-select: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: rgba(0, 229, 160, 0.28);
+  color: var(--fg-strong);
+}
+
+/* Visible, consistent keyboard focus everywhere. */
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* Interactive controls that accept keyboard focus get an explicit ring too. */
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 1px;
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 9px;
+  height: 9px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--bg-panel);
+  background: transparent;
 }
 ::-webkit-scrollbar-thumb {
   background: var(--border);
   border-radius: 5px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #444;
+  background: #4a4f58;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
 }
 
 input,
 select,
-button {
+button,
+textarea {
   font-family: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

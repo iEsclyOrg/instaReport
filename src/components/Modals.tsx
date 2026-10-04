@@ -1,13 +1,36 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useApp, type Account } from "../store";
 import ToolDialog from "./ToolDialog";
+
+function useEscape(onEscape: () => void) {
+  useEffect(() => {
+    const h = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onEscape();
+    };
+    window.addEventListener("keydown", h);
+    return () => window.removeEventListener("keydown", h);
+  }, [onEscape]);
+}
+
+function ModalHead({ title, onClose }: { title: string; onClose: () => void }) {
+  return (
+    <div className="modal-head">
+      <h3>{title}</h3>
+      <button className="modal-x" onClick={onClose} title="Close (Esc)">
+        ✕
+      </button>
+    </div>
+  );
+}
 
 export function AccountsModal() {
   const draft = useApp((s) => s.accountsDraft);
   const update = useApp((s) => s.updateAccountsDraft);
   const save = useApp((s) => s.saveAccounts);
   const close = useApp((s) => s.closeAccounts);
+
+  useEscape(close);
 
   function patch(i: number, field: "user" | "pass", value: string) {
     const next = draft.map((a, idx) => (idx === i ? { ...a, [field]: value } : a));
@@ -23,14 +46,15 @@ export function AccountsModal() {
   }
 
   return (
-    <div className="overlay">
+    <div className="overlay" onClick={close}>
       <motion.div
         className="modal wide"
         initial={{ opacity: 0, scale: 0.96, y: 8 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ duration: 0.16, ease: "easeOut" }}
+        onClick={(e) => e.stopPropagation()}
       >
-        <h3>Accounts</h3>
+        <ModalHead title="Accounts" onClose={close} />
         <p className="hint">
           {draft.length} account{draft.length === 1 ? "" : "s"} — usernames and passwords are
           encrypted when saved.
@@ -57,13 +81,14 @@ export function AccountsModal() {
                 className="btn btn-danger"
                 style={{ padding: "6px 8px" }}
                 onClick={() => removeRow(i)}
+                title="Remove"
               >
                 ✕
               </button>
             </div>
           ))}
         </div>
-        <button className="btn btn-ghost" onClick={addRow}>
+        <button className="btn btn-ghost sm" onClick={addRow}>
           + Add account
         </button>
         <div className="modal-actions">
@@ -102,15 +127,18 @@ function LicenseModal() {
     }
   }
 
+  useEscape(close);
+
   return (
-    <div className="overlay">
+    <div className="overlay" onClick={close}>
       <motion.div
         className="modal"
         initial={{ opacity: 0, scale: 0.96, y: 8 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ duration: 0.16, ease: "easeOut" }}
+        onClick={(e) => e.stopPropagation()}
       >
-        <h3>License Activation</h3>
+        <ModalHead title="License Activation" onClose={close} />
         <p className="hint">
           {license?.ok
             ? `Licensed — ${license.code ?? "key saved"}. Enter a new key to re-activate.`
@@ -147,6 +175,8 @@ function PromptModal() {  const otp = useApp((s) => s.otpPrompt);
   const dismiss = useApp((s) => s.dismissPrompt);
   const [value, setValue] = useState("");
 
+  useEscape(dismiss);
+
   const isOtp = Boolean(otp);
   const title = isOtp ? "2FA code required" : "Manual CAPTCHA solve";
   const hint = isOtp
@@ -161,14 +191,15 @@ function PromptModal() {  const otp = useApp((s) => s.otpPrompt);
   }
 
   return (
-    <div className="overlay">
+    <div className="overlay" onClick={dismiss}>
       <motion.div
         className="modal"
         initial={{ opacity: 0, scale: 0.96, y: 8 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ duration: 0.16, ease: "easeOut" }}
+        onClick={(e) => e.stopPropagation()}
       >
-        <h3>{title}</h3>
+        <ModalHead title={title} onClose={dismiss} />
         <p className="hint">{hint}</p>
         <input
           className="field"

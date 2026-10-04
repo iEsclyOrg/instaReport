@@ -50,7 +50,7 @@ export default function Controls() {
 
   return (
     <motion.div
-      className="controls"
+      className={`controls${running ? " running" : ""}`}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3, delay: 0.05 }}
@@ -64,16 +64,13 @@ export default function Controls() {
           onKeyDown={(e) => e.key === "Enter" && handleRun()}
           placeholder="username"
           spellCheck={false}
+          disabled={running}
         />
       </div>
 
       <div className="ctrl-group">
         <span className="ctrl-label">Platform:</span>
-        <select
-          className="field"
-          value={platform}
-          onChange={(e) => setPlatform(e.target.value)}
-        >
+        <select className="field" value={platform} onChange={(e) => setPlatform(e.target.value)} disabled={running}>
           {boot.platforms.map(([name]) => (
             <option key={name} value={name}>
               {name}
@@ -84,11 +81,7 @@ export default function Controls() {
 
       <div className="ctrl-group">
         <span className="ctrl-label">Reason:</span>
-        <select
-          className="field"
-          value={reason}
-          onChange={(e) => setReason(e.target.value)}
-        >
+        <select className="field" value={reason} onChange={(e) => setReason(e.target.value)} disabled={running}>
           {boot.reasons.map(([name]) => (
             <option key={name} value={name}>
               {name}
@@ -106,6 +99,7 @@ export default function Controls() {
           max={16}
           value={workers}
           onChange={(e) => setWorkers(Math.max(1, Math.min(16, Number(e.target.value) || 1)))}
+          disabled={running}
         />
       </div>
 

@@ -150,7 +150,6 @@ function ActionDialog({ schema }: { schema: ToolSchema }) {
 
   return (
     <>
-      <h3>{schema.title}</h3>
       <p className="hint">{schema.desc}</p>
       {schema.available === false ? (
         <p className="tool-msg warn">Not available in this build.</p>
@@ -200,7 +199,6 @@ function FormDialog({ schema }: { schema: ToolSchema }) {
 
   return (
     <>
-      <h3>{schema.title}</h3>
       <p className="hint">{schema.desc}</p>
       <div className="tool-form">
         {fields.map((f) => (
@@ -261,7 +259,6 @@ function TableDialog({ schema }: { schema: ToolSchema }) {
 
   return (
     <>
-      <h3>{schema.title}</h3>
       <p className="hint">{schema.desc}</p>
       {(inputs.length > 0 || (schema.actions ?? []).length > 0) && (
         <div className="toolbar">
@@ -342,10 +339,20 @@ function TableDialog({ schema }: { schema: ToolSchema }) {
 
 export default function ToolDialog() {
   const dialog = useApp((s) => s.toolDialog);
+  const close = useApp((s) => s.closeToolDialog);
+
+  useEffect(() => {
+    const h = (e: KeyboardEvent) => {
+      if (e.key === "Escape") close();
+    };
+    window.addEventListener("keydown", h);
+    return () => window.removeEventListener("keydown", h);
+  }, [close]);
+
   if (!dialog) return null;
   const { schema } = dialog;
   return (
-    <div className="overlay" onClick={() => void 0}>
+    <div className="overlay" onClick={close}>
       <motion.div
         className={schema.kind === "table" ? "modal wide" : "modal"}
         initial={{ opacity: 0, scale: 0.96, y: 8 }}
@@ -353,6 +360,12 @@ export default function ToolDialog() {
         transition={{ duration: 0.16, ease: "easeOut" }}
         onClick={(e) => e.stopPropagation()}
       >
+        <div className="modal-head">
+          <h3>{schema.title}</h3>
+          <button className="modal-x" onClick={close} title="Close (Esc)">
+            ✕
+          </button>
+        </div>
         {schema.kind === "action" ? (
           <ActionDialog schema={schema} />
         ) : schema.kind === "table" ? (

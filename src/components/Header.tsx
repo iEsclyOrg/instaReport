@@ -11,11 +11,17 @@ export default function Header() {
   const stats = useApp((s) => s.stats);
   const accountsCount = useApp((s) => s.accountsCount);
   const proxiesCount = useApp((s) => s.proxiesCount);
+  const running = useApp((s) => s.running);
   const openLicense = useApp((s) => s.openLicense);
 
   const licOk = license?.ok;
   const successRate =
     stats.total > 0 ? `${Math.round((stats.successes / stats.total) * 100)}%` : "0%";
+  const licLabel = license === null ? "Checking…" : licOk
+    ? license.code
+      ? license.code.replace(/^(.{4}).*(.{2})$/, "$1•••$2")
+      : "Licensed"
+    : "Unlicensed";
 
   return (
     <motion.header
@@ -32,23 +38,39 @@ export default function Header() {
         </div>
       </div>
       <div className="header-right">
-        <button
-          className={`license-pill ${licOk ? "ok" : "warn"} clickable`}
-          onClick={openLicense}
-          title="Manage license"
-        >
-          <span className="dot">●</span>
-          {license === null ? "Checking…" : licOk ? "Licensed" : "Unlicensed"}
-          <span className="chev">▾</span>
-        </button>
+        <div className="header-top-row">
+          <button
+            className={`license-pill ${licOk ? "ok" : "warn"} clickable`}
+            onClick={openLicense}
+            title={license?.code ? `License ${license.code}` : "Manage license"}
+          >
+            <span className="dot">●</span>
+            {licLabel}
+            <span className="chev">▾</span>
+          </button>
+          <span className={`run-indicator ${running ? "on" : ""}`}>
+            <span className="pulse" />
+            running
+          </span>
+        </div>
         <div className="stat-row">
-          <motion.div className="stat-tile" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.1 }}>
+          <motion.div
+            className={`stat-tile${running ? " running" : ""}`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.1 }}
+          >
             <span className="label">Reports</span>
             <span className="value" style={{ color: "var(--accent-green)" }}>
               {formatCount(stats.total)}
             </span>
           </motion.div>
-          <motion.div className="stat-tile" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.18 }}>
+          <motion.div
+            className={`stat-tile${running ? " running" : ""}`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.18 }}
+          >
             <span className="label">Success</span>
             <span className="value" style={{ color: "var(--accent-blue)" }}>
               {successRate}

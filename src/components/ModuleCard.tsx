@@ -19,13 +19,27 @@ export default function ModuleCard({
   const toggleFavorite = useApp((s) => s.toggleFavorite);
   const [label, status, icon, desc, key] = def;
 
+  function open() {
+    void openToolDialog(key);
+  }
+
   return (
     <motion.div
       className="card"
       variants={cardVariants}
       whileHover={{ y: -4 }}
       transition={{ duration: 0.18, ease: "easeOut" }}
-      onClick={() => void openToolDialog(key)}
+      onClick={open}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          open();
+        }
+      }}
+      role="button"
+      tabIndex={0}
+      aria-label={`${label} — ${status}`}
+      title={`Open ${label}`}
       data-index={index}
     >
       <div className={`card-chip chip-${status}`}>{icon}</div>
