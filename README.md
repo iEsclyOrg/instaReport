@@ -1,4 +1,4 @@
-﻿<div align="center">
+<div align="center">
 
 <a href="https://github.com/iEsclyOrg/instaReport">
   <img src="social-preview.png" alt="InstaReport - Professional Social Media Reporting & Account Management Platform">
@@ -12,9 +12,9 @@
 
 ### InstaReport
 
-**Actively developed since 2021** &nbsp;·&nbsp; **Officially maintained by [iExly](https://github.com/iEsclyOrg)**
+**Actively developed since 2021** &nbsp;·&nbsp; **Officially maintained by [iEscly](https://github.com/iEsclyOrg)**
 
-Originally created under the **Credly** project, later known as **iEscly**, now released as **InstaReport** by **iExly**.
+Originally created under the **Credly** project, now released as **InstaReport** by **iEscly**.
 
 ---
 
