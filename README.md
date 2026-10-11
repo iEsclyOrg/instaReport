@@ -76,7 +76,6 @@ The history of InstaReport spans multiple years of active development.
 |------|-------|
 | 2021 | **Credly** |
 | 2022 – 2026 | **iEscly** |
-| 2026 – Present | **iExly** |
 
 Thousands of hours have gone into building, maintaining, improving and supporting this software across multiple platforms. This repository represents the latest official release.
 
@@ -95,7 +94,7 @@ Due to the popularity of the project, there are unofficial repositories, fake se
 | 💬 Official Telegram | <https://t.me/iescly> |
 | 🎮 Official Discord | <https://discord.com/invite/v6ebT5aFx> |
 | 📺 Official YouTube | <https://youtube.com/@iEscly> |
-| 📸 Official Instagram | <https://instagram.com/i3scly> |
+| 📸 Official Instagram | <currently no ig> |
 
 ---
 
@@ -496,8 +495,8 @@ Full changelog:
 
 **InstaReport** — a premium social media automation platform by [iExly](https://github.com/iEsclyOrg)
 
-Originally **Credly** · Later **iEscly** · Now **InstaReport by iExly**
+Originally **Credly** Now **InstaReport by iEscly**
 
-Copyright © 2021 – 2026 iExly. All rights reserved.
+Copyright © 2021 – 2026 iEscly. All rights reserved.
 
 </div>
