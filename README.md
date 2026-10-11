@@ -14,7 +14,7 @@
 
 **Actively developed since 2021** &nbsp;·&nbsp; **Officially maintained by [iExly](https://github.com/iEsclyOrg)**
 
-Originally created under the **Credly** project, later known as **iEscly**, now released as **InstaReport** by **iExly**.
+Originally created under the **Credly** project, now released as **InstaReport** by **iEscly**.
 
 ---
 
