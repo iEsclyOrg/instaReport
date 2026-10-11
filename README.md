@@ -12,7 +12,7 @@
 
 ### InstaReport
 
-**Actively developed since 2021** &nbsp;·&nbsp; **Officially maintained by [iExly](https://github.com/iEsclyOrg)**
+**Actively developed since 2021** &nbsp;·&nbsp; **Officially maintained by [iEscly](https://github.com/iEsclyOrg)**
 
 Originally created under the **Credly** project, now released as **InstaReport** by **iEscly**.
 
