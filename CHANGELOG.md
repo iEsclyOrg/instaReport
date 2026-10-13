@@ -11,6 +11,15 @@
 ---
 
 
+## [9.0.4] - 2026-10-13
+
+### 🍎 macOS Build
+
+- **Python backend restored on macOS** — the macOS bundle no longer strips `externalBin`/`resources`, so the DMG now ships the `sidecar-bridge` binary and the Playwright `browsers` folder. The app no longer fails with "Backend failed to start" / "The sidecar was not found"
+- **Sidecar now built in CI** — `build-macos.yml` sets up Python, checks out the engine and builds the `aarch64-apple-darwin` sidecar before the Tauri build, instead of shipping a DMG with no backend
+- **Portable sidecar packaging** — the hardcoded `C:\Users\...` paths in `sidecar_bridge.py`, `sidecar-bridge.spec` and `tools.py` (`_export_path`) are removed; the engine root is resolved from `INSTAREPORT_ROOT` or sibling layouts and the whole `instareport` package is bundled into the frozen binary
+- **New `sidecar/build_sidecar.py`** — a single command installs deps, downloads the platform Chromium, runs PyInstaller and places `sidecar-bridge-<triple>` into `src-tauri/binaries/`
+
 ## [9.0.1] - 2026-08-16
 
 ### ?? Bug Fixes
