@@ -19,7 +19,7 @@ InstaReport ships as **standalone binaries** for Windows and Linux, and a **Pyth
 | Resource | Link |
 |----------|------|
 | Official Website | <https://iescly.duckdns.org> |
-| Official GitHub | <https://github.com/iEsclyDev/instareport> |
+| Official GitHub | <https://github.com/iEsclyOrg/instaReport> |
 | Official Telegram | <https://t.me/iescly> |
 
 ---
@@ -33,7 +33,7 @@ InstaReport ships as **standalone binaries** for Windows and Linux, and a **Pyth
 
 ### Installation
 
-1. Download the latest Windows release from [GitHub Releases](https://github.com/iEsclyDev/instareport/releases).
+1. Download the latest Windows release from [GitHub Releases](https://github.com/iEsclyOrg/instaReport/releases).
 2. Locate `InstaReport-Windows-x86-64.exe`.
 3. Double-click to run.
 
@@ -71,7 +71,7 @@ chmod +x InstaReport-Linux-x86_64.AppImage
 
 > If FUSE is unavailable, run with `APPIMAGE_EXTRACT_AND_RUN=1 ./InstaReport-Linux-x86_64.AppImage`.
 
-Download both from the [GitLab release](https://gitlab.com/iEsclyDev/InstaReport/-/releases) or [GitHub Releases](https://github.com/iEsclyDev/instareport/releases).
+Download both from the [GitLab release](https://gitlab.com/iEsclyDev/InstaReport/-/releases) or [GitHub Releases](https://github.com/iEsclyOrg/InstaReport/releases).
 
 ### First Run
 

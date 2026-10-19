@@ -17,7 +17,7 @@ This is the fastest and most reliable way to reach the team. Support is availabl
 To help us resolve your issue faster, please have ready:
 
 1. **Your platform** — Windows, Linux, Android (Termux) or Telegram bot.
-2. **Your version** — check the current version in the app or on the [releases page](https://github.com/iEsclyDev/instareport/releases).
+2. **Your version** — check the current version in the app or on the [releases page](https://github.com/iEsclyOrg/instaReport/releases).
 3. **A clear description** of the problem and what you expected to happen.
 4. **Any error messages** shown on screen.
 

@@ -6,7 +6,7 @@
 
 ## Supported Versions
 
-Only the **latest release** receives security fixes. Please always update to the newest version from the [official releases](https://github.com/iEsclyDev/instareport/releases).
+Only the **latest release** receives security fixes. Please always update to the newest version from the [official releases](https://github.com/iEsclyOrg/instaReport/releases).
 
 | Version | Supported |
 |---------|-----------|
@@ -45,7 +45,7 @@ When reporting, please include:
 
 - Only download InstaReport from the **official** resources:
   - Website: <https://iescly.duckdns.org>
-  - GitHub: <https://github.com/iEsclyDev/instareport>
+  - GitHub: <https://github.com/iEsclyOrg/instaReport>
   - Telegram: <https://t.me/iescly>
 - Beware of **fake copies** and impersonators. Always verify the channel before downloading software or purchasing licenses.
 - Never share your license key or hardware-ID information publicly.

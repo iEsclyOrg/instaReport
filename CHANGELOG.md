@@ -10,15 +10,25 @@
 
 ---
 
+## [9.0.4] - 2026-10-20
 
-## [9.0.4] - 2026-10-13
-
-### 🍎 macOS Build
+### 🍎 macOS Build (Apple Silicon)
 
 - **Python backend restored on macOS** — the macOS bundle no longer strips `externalBin`/`resources`, so the DMG now ships the `sidecar-bridge` binary and the Playwright `browsers` folder. The app no longer fails with "Backend failed to start" / "The sidecar was not found"
+- **Fixed sidecar launch under hardened runtime** — ad-hoc signing with hardened runtime (`adhoc,runtime`) made PyInstaller's onefile bootloader fail to `dlopen` the extracted Python with a "different Team IDs" error, which the app silently swallowed. The macOS build is now ad-hoc signed **without** hardened runtime, so the sidecar loads reliably without notarization
+- **Fixed frozen path resolution** — `sidecar_bridge.py` `_proxy_path()` called `os.path.join(REPO, ...)` with `REPO = None` in frozen builds, raising `TypeError: expected str, bytes or os.PathLike object, not NoneType` during bootstrap. Relative paths are now resolved against the engine data dir when frozen
 - **Sidecar now built in CI** — `build-macos.yml` sets up Python, checks out the engine and builds the `aarch64-apple-darwin` sidecar before the Tauri build, instead of shipping a DMG with no backend
 - **Portable sidecar packaging** — the hardcoded `C:\Users\...` paths in `sidecar_bridge.py`, `sidecar-bridge.spec` and `tools.py` (`_export_path`) are removed; the engine root is resolved from `INSTAREPORT_ROOT` or sibling layouts and the whole `instareport` package is bundled into the frozen binary
 - **New `sidecar/build_sidecar.py`** — a single command installs deps, downloads the platform Chromium, runs PyInstaller and places `sidecar-bridge-<triple>` into `src-tauri/binaries/`
+
+> Windows and Linux remain on **9.0.3**, which is stable — this release only ships the fixed **macOS** DMG (`InstaReport_9.0.4_aarch64.dmg`).
+
+## [9.0.2] - 2026-09-13
+
+### Bug Fixes
+
+- **Sidecar dead-pipe fix** - if the built-in engine sidecar process dies or its IPC pipe closes mid-session ("os error 232 / Activation error: sidecar write failed"), the Tauri bridge now detects the dead sidecar, automatically respawns it, and retries the pending request. No more stuck activation or frozen tools
+- **Linux build fix** - explicit type annotation in sidecar.rs so the Linux release compiles cleanly
 
 ## [9.0.1] - 2026-08-16
 

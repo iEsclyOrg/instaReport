@@ -59,7 +59,7 @@ Yes — the Termux build runs as a Python package. It is distributed exclusively
 
 ### How do I install on Windows?
 
-1. Download `InstaReport-Windows-x86-64.exe` from [GitHub Releases](https://github.com/iEsclyDev/instareport/releases).
+1. Download `InstaReport-Windows-x86-64.exe` from [GitHub Releases](https://github.com/iEsclyOrg/instaReport/releases).
 2. Run the executable.
 3. Enter your license key.
 
